@@ -158,11 +158,7 @@
 
 				// BibTeX popup.
 					var $bibModal = $('#bibModal'),
-						$bibModalTitle = $('#bibModalTitle'),
-						$bibModalSubtitle = $('#bibModalSubtitle'),
-						$bibModalCode = $('#bibModalCode'),
-						$bibModalDownload = $('#bibModalDownload'),
-						$bibModalCopy = $('#bibModalCopy'),
+						$bibModalFrame = $('#bibModalFrame'),
 						$bibTriggers = $('.cite-bib');
 
 					var closeBibModal = function() {
@@ -171,18 +167,11 @@
 					};
 
 					var openBibModal = function($trigger) {
-						var title = $trigger.data('title') || 'BibTeX',
-							bibText = $trigger.attr('data-bib-text') || '',
-							bibFile = $trigger.data('bib-file') || $trigger.attr('href');
+						var bibFile = $trigger.data('bib-file') || $trigger.attr('href');
 
-						$bibModalTitle.text(title);
-						$bibModalSubtitle.text('Copy or download the BibTeX entry below.');
-						$bibModalCode.text(bibText.replace(/&#10;/g, '\n'));
-						$bibModalDownload.attr('href', bibFile);
-						$bibModalDownload.attr('download', bibFile.split('/').pop());
+						$bibModalFrame.attr('src', bibFile);
 						$bibModal.addClass('is-visible').attr('aria-hidden', 'false');
 						$body.addClass('bib-modal-open');
-						$bibModalCopy.focus();
 					};
 
 					$bibTriggers.on('click', function(event) {
@@ -192,22 +181,6 @@
 
 					$bibModal.on('click', '[data-close-bib-modal]', function() {
 						closeBibModal();
-					});
-
-					$bibModalCopy.on('click', function() {
-						var bibText = $bibModalCode.text();
-
-						if (navigator.clipboard && navigator.clipboard.writeText) {
-							navigator.clipboard.writeText(bibText);
-						}
-						else {
-							var $temp = $('<textarea>')
-								.val(bibText)
-								.appendTo($body)
-								.select();
-							document.execCommand('copy');
-							$temp.remove();
-						}
 					});
 
 					$window.on('keydown', function(event) {
