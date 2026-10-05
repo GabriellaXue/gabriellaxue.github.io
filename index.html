@@ -87,6 +87,29 @@
 								<div class="container">
 									<h3><i class="icon solid fa-book"> Publications</i></h3>
 									<article class="publication-card">
+										<span class="image right small"><img src="images/INSITE_bg.jpeg" alt="Starlink throughput architecture overview" style="width:250px;height:auto;"/></span>
+										<div class="inner">
+											<p class="publication-venue"><span>To appear in HotNets 2026</span></p>
+											<p>
+												<b>
+													What Goes Around Comes Around: Predictive Ground Station Selection For LEO Constellation
+												</b>
+												<br /><u>Fan-Xue Gabriella Reidys</u>,
+												Mubashir Anwar, Ragini Gupta, Aryan Taneja, Deepak Vasisht, Matthew Caesar.
+											</p>
+											<!-- <ul class="actions publication-actions">
+												<li><a href="https://dl.acm.org/doi/10.1145/3768971" class="button alt small">Paper</a></li>
+												<li><a href="bib/vivisecting-starlink-throughput.bib" class="button alt small cite-bib" data-title="Vivisecting Starlink Throughput: Measurement and Prediction" data-bib-file="bib/vivisecting-starlink-throughput.bib">Cite</a></li>
+												<li><a href="slides/CoNEXT_Session_5_Gabriella.pdf" class="button alt small">Slide</a></li>
+												<li><a href="https://github.com/ConnectedSystemsLab/StarNet" class="button alt small">Code</a></li>
+											</ul> -->
+											<details class="publication-summary" id="starnet-summary">
+												<summary>Read summary</summary>
+												<p>LEO satellite networks have grown into critical communications infrastructure serving rapidly growing volumes of Internet traffic. As demand grows, selecting which ground station each satellite should use becomes a key traffic engineering problem. Existing systems make this decision using present-time conditions: each satellite selects the best ground station currently in view, which remains fixed throughout the connection window. However, the traffic served by a satellite can change substantially during that interval, causing individually reasonable decisions to collectively overload heavily demanded ground stations while available capacity elsewhere remains underutilized. To address this, we present INSITE, a predictive ground station selection framework that jointly plans constellation-wide assignments using predicted traffic demand over each connection window. In doing so, INSITE balances load across ground stations, minimizes ISL usage, and reduces congestion-induced queueing. In preliminary results, INSITE reduces the load imbalance factor by 51%, the overflow traffic that would otherwise be forced onto detours to distant stations by 70%, and packet loss under application latency budgets by 3×.</p>
+											</details>
+										</div>
+									</article>
+									<article class="publication-card">
 										<span class="image right small"><img src="images/starnet_model.jpg" alt="Starlink throughput architecture overview" style="width:250px;height:auto;"/></span>
 										<div class="inner">
 											<p class="publication-venue"><span>CoNEXT 2025</span></p>
