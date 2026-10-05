@@ -2208,6 +2208,234 @@ input, select, textarea {
 				border-radius: 0;
 			}
 
+		.publication-card {
+			margin: 0 0 2.5em 0;
+		}
+
+			.publication-card .publication-venue {
+				margin: 0 0 0.5em 0;
+			}
+
+				.publication-card .publication-venue span {
+					display: inline-block;
+					background: #7f91e8;
+					color: #ffffff;
+					border-radius: 5px;
+					font-size: 0.7em;
+					font-weight: 700;
+					letter-spacing: 0.04em;
+					padding: 0.25em 0.55em;
+					text-transform: uppercase;
+				}
+
+			.publication-card .image {
+				overflow: visible;
+				position: relative;
+			}
+
+				.publication-card .image img {
+					-moz-transition: -moz-transform 0.25s ease;
+					-webkit-transition: -webkit-transform 0.25s ease;
+					-ms-transition: -ms-transform 0.25s ease;
+					transition: transform 0.25s ease;
+					position: relative;
+					z-index: 1;
+				}
+
+				.publication-card .image:hover img {
+					-moz-transform: scale(1.55);
+					-webkit-transform: scale(1.55);
+					-ms-transform: scale(1.55);
+					transform: scale(1.55);
+					z-index: 3;
+					box-shadow: 0 0.65em 1.5em rgba(0, 0, 0, 0.18);
+				}
+
+			.publication-card .publication-summary {
+				margin: 0.35em 0 0.8em 0;
+			}
+
+			.publication-card .inner > p {
+				margin-bottom: 0.55em;
+			}
+
+			.publication-card details.publication-summary {
+				margin: 0.2em 0 1em 0;
+				padding-bottom: 0.7em;
+				border-bottom: solid 1px #ececec;
+			}
+
+				.publication-card details.publication-summary summary {
+					cursor: pointer;
+					list-style: none;
+					color: #777;
+					font-size: 0.9em;
+					font-weight: 700;
+					outline: none;
+					display: inline-flex;
+					align-items: center;
+					gap: 0.35em;
+					padding: 0.1em 0;
+					transition: color 0.2s ease;
+				}
+
+				.publication-card details.publication-summary summary:hover {
+					color: #5a5a5a;
+				}
+
+				.publication-card details.publication-summary summary::-webkit-details-marker {
+					display: none;
+				}
+
+				.publication-card details.publication-summary summary:before {
+					content: '\f107';
+					font-family: 'Font Awesome 5 Free';
+					font-weight: 900;
+					display: inline-block;
+					margin-right: 0.5em;
+					transition: transform 0.2s ease;
+				}
+
+				.publication-card details.publication-summary[open] summary:before {
+					transform: rotate(180deg);
+				}
+
+				.publication-card details.publication-summary p {
+					margin: 0.55em 0 0 0;
+					color: #666;
+					line-height: 1.6;
+			}
+
+			.publication-card .publication-actions {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				gap: 0.45em;
+				list-style: none;
+				margin: 0 0 0.1em 0;
+				padding-left: 0;
+			}
+
+				.publication-card .publication-actions li {
+					padding-left: 0;
+				}
+
+				.publication-card .publication-actions li .button {
+					border-radius: 4px;
+					padding: 0 0.85em;
+					height: 2.2em;
+					line-height: 2.2em;
+				}
+
+				.publication-card .publication-actions li .button.alt {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 2px #e4e4e4;
+				}
+
+				.publication-card .publication-actions li .button.alt:hover {
+					background-color: #f7f7f7;
+			}
+
+			.bib-modal {
+				display: none;
+				position: fixed;
+				inset: 0;
+				z-index: 10001;
+			}
+
+				.bib-modal.is-visible {
+					display: block;
+				}
+
+				.bib-modal__backdrop {
+					position: absolute;
+					inset: 0;
+					background: rgba(16, 18, 24, 0.62);
+				}
+
+				.bib-modal__dialog {
+					position: relative;
+					max-width: 760px;
+					width: calc(100% - 2rem);
+					margin: 6vh auto;
+					background: #ffffff;
+					border-radius: 10px;
+					padding: 1.25em 1.25em 1em 1.25em;
+					box-shadow: 0 1.25em 3em rgba(0, 0, 0, 0.25);
+				}
+
+				.bib-modal__header {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 1em;
+				}
+
+					.bib-modal__header h4 {
+						margin: 0;
+					}
+
+				.bib-modal__close {
+					background: transparent;
+					border: 0;
+					color: #777;
+					cursor: pointer;
+					font-size: 2rem;
+					line-height: 1;
+					padding: 0;
+				}
+
+				.bib-modal__subtitle {
+					color: #777;
+					font-size: 0.95em;
+					margin: 0.6em 0 1em 0;
+				}
+
+				.bib-modal__code {
+					background: #fafafa;
+					border: solid 1px #e7e7e7;
+					border-radius: 8px;
+					margin: 0;
+					max-height: 50vh;
+					overflow: auto;
+					padding: 1em;
+					white-space: pre-wrap;
+					word-break: break-word;
+				}
+
+					.bib-modal__code code {
+						font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+						font-size: 0.9em;
+					}
+
+				.bib-modal__actions {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 0.75em;
+					justify-content: flex-end;
+					margin-top: 1em;
+				}
+
+			@media screen and (max-width: 736px) {
+
+				.bib-modal__dialog {
+					margin: 2vh auto;
+					padding: 1em;
+				}
+
+				.bib-modal__actions {
+					justify-content: stretch;
+				}
+
+					.bib-modal__actions .button {
+						width: 100%;
+					}
+			}
+
 /* List */
 
 	ol {
